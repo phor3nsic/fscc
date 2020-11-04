@@ -79,7 +79,7 @@ python3 fscc.py -d hackerone.com -s
 
 Get Ip's:
 ```
-python3 fscc.py -d hackerone.com -s
+python3 fscc.py -d hackerone.com -i
 
 [+] [value] xxx.xxx.xxx.xxx
 [+] [value] xxx.xxx.xxx.xxx
