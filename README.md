@@ -3,7 +3,7 @@ _Fast Sonar Consult CLI_
 
 ## Install
 
-Cone repository and execulte:
+Clone the repository and execulte:
 
 ```
 git clone https://github.com/phor3nsic/fscc.git
