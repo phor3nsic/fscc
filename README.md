@@ -2,7 +2,7 @@
 **_Fast Sonar Consult CLI_**
 
 <p align="center">
-  <img width="30%" height="30%" src="icon/icon.jpg">
+  <img width="15%" height="15%" src="icon/icon.jpg">
 </p>
 
 _References for project: [Crobat](https://github.com/cgboal/sonarsearch)_
