@@ -11,15 +11,16 @@ print(banner)
 
 parser = argparse.ArgumentParser(add_help=True)
 parser.add_argument("-d", "--domain", help="Domain for osint", required=True)
+parser.add_argument("-r", "--reverse", help="Reverse IP")
 parser.add_argument("-i", "--ip", help="Show Ip of Targets", action="store_true")
 parser.add_argument("-s", "--subdomains", help="Show Subdomains of Targets", action="store_true")
 args = parser.parse_args()
 
-SONAR = "https://sonar.omnisint.io/all/"
+SONAR = "https://sonar.omnisint.io/"
 
 def getinfo(domain):
 	print(f"[!] [target] {domain}\n")
-	req = requests.get(SONAR+domain)
+	req = requests.get(SONAR+"all/"+domain)
 	return req.text
 
 def beautifulResponse(response):
@@ -39,8 +40,16 @@ def beautifulResponse(response):
 			print(f"[i] [type] {data['type']}")
 			print("")
 
-def main():
-	beautifulResponse(getinfo(args.domain))
+def reverse(ip, domain):
+	req = requests.get(SONAR+"reverse/"+ip)
+	for d in json.loads(req.text):
+		if domain in d:
+			print(f"[!] Possible subdomain found: {d}")
+		print(f"[?] {d}")
 
 if __name__ == '__main__':
-	main()
+	if args.reverse != None:
+		reverse(args.reverse, args.domain)
+	else:
+		beautifulResponse(getinfo(args.domain))
+	

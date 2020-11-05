@@ -1,5 +1,11 @@
 # fscc
-_Fast Sonar Consult CLI_
+**_Fast Sonar Consult CLI_**
+
+<p align="center">
+  <img width="30%" height="30%" src="icon/icon.jpg">
+</p>
+
+_References for project: [Crobat](https://github.com/cgboal/sonarsearch)_
 
 ## Install
 
@@ -14,12 +20,14 @@ python3 fscc.py -h
 =====================
 Fast Sonar Consult CLI
 =====================
-usage: fscc.py [-h] -d DOMAIN [-i] [-s]
+usage: fscc.py [-h] -d DOMAIN [-r REVERSE] [-i] [-s]
 
 optional arguments:
   -h, --help            show this help message and exit
   -d DOMAIN, --domain DOMAIN
                         Domain for osint
+  -r REVERSE, --reverse REVERSE
+                        Reverse IP
   -i, --ip              Show Ip of Targets
   -s, --subdomains      Show Subdomains of Targets
 
@@ -90,4 +98,22 @@ python3 fscc.py -d hackerone.com -i
 
 ```
 
-###### tags: `sonar cli` `sonar project` `subdomains` `enum` `osint` `ips`
+Reverse Ip:
+
+```
+python3 fscc.py -d hackerone.com -r xxx.xxx.xxx
+
+[?] by1.recoms.net
+[?] by4.recoms.pro
+[?] dns.abcd.domains
+[?] dns.abcd.support
+[?] dns2.wfolio.ru
+[?] kz1.recoms.net
+[?] kz4.recoms.pro
+[?] ns-sel4.axelname.ru
+[?] ns2.mediaweb.ru
+
+...
+```
+
+###### tags: `sonar cli` `sonar project` `subdomains` `enum` `osint` `ips` `bugbounty` `enumeration` `pentest` `dns` `sonar-api` `osint-tool` 
