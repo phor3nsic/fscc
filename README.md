@@ -7,9 +7,19 @@
 
 _References for project: [Crobat](https://github.com/cgboal/sonarsearch)_
 
+## About
+
+`fscc` (Fast Sonar Consult CLI) is a small OSINT command-line client for the
+Project Sonar DNS dataset. Given a domain, it queries the Sonar API to enumerate
+subdomains and their IP addresses, and can also perform reverse-IP lookups to find
+other hostnames sharing an address — handy for the recon phase of bug bounty work.
+
+> Note: the tool relies on the Sonar API endpoint (`sonar.omnisint.io`), which may no
+> longer be available.
+
 ## Install
 
-Clone the repository and execulte:
+Clone the repository and run it:
 
 ```
 git clone https://github.com/phor3nsic/fscc.git
@@ -116,4 +126,10 @@ python3 fscc.py -d hackerone.com -r xxx.xxx.xxx
 ...
 ```
 
-###### tags: `sonar cli` `sonar project` `subdomains` `enum` `osint` `ips` `bugbounty` `enumeration` `pentest` `dns` `sonar-api` `osint-tool` 
+## Disclaimer
+
+For authorized security testing and education only. You are responsible for how you use it.
+
+## License
+
+[MIT](LICENSE) © [phor3nsic](https://github.com/phor3nsic)
